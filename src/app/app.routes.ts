@@ -15,12 +15,23 @@ export const routes: Routes =
     {
         path: "",
         component: LayoutsComponent,
-        canActivateChild: [()=> inject(AuthService).isAuthenticated()],
-        //AuthServie nesnesini IoC Container'den enjekte et ve nesne üzerinden isisAuthenticated() fonksiyonunu çağır kişinin kimliği doğrulanmış mı onu test et ve ona göre yavru komponenti çağır.
+        canActivateChild: [() => inject(AuthService).isAuthenticated()],
         children: [
             {
-                path: "home",
+                path: "",
                 component: HomeComponent
+            },
+            {
+                path: "doctors",
+                component: DoctorsComponent
+            },
+            {
+                path: "patients",
+                component: PatientsComponent
+            },
+            {
+                path: "users",
+                component: UsersComponent
             }
         ]
     },

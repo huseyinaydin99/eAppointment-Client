@@ -13,7 +13,7 @@ export class SwalService {
       title: title,
       timer: 3000,
       icon: icon,
-      position: "bottom-right",
+      position: "top-right",
       showCancelButton: false,
       showCloseButton: false,
       showConfirmButton: false,
