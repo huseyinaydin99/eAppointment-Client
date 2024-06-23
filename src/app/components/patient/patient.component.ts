@@ -53,7 +53,7 @@ export class PatientsComponent implements OnInit {
   }
 
   delete(id: string, fullName: string) {
-    this.swal.callSwal("Delete patient?", `You want to delete ${fullName}?`, () => {
+    this.swal.callSwal("Hasta silinsin mi?", `${fullName} isimli hasta silinsin mi?`, () => {
       this.http.post<string>("Patients/DeleteById", { id: id }, (res) => {
         this.swal.callToast(res.data, "info");
         this.getAll();

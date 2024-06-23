@@ -7,7 +7,7 @@ import { departments } from '../../constants';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FormValidateDirective } from 'form-validate-angular';
 import { SwalService } from '../../services/swal.service';
-import { DoctorPipe } from '../pipe/doctor.pipe';
+import { DoctorPipe } from '../../pipe/doctor.pipe';
 
 @Component({
   selector: 'app-doctors',

@@ -1,6 +1,6 @@
 import { DepartmentModel } from "./models/doctor.model";
 
-export const api: string = "https://localhost:7295/api"
+export const api: string = "https://localhost:7099/api"
 
 export const departments: DepartmentModel[] = [
     {

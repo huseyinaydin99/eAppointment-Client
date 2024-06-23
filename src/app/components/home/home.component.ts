@@ -63,8 +63,8 @@ export class HomeComponent {
   onAppointmentFormOpening(e: any) {
     e.cancel = true;
 
-    this.createModel.startDate = this.date.transform(e.appointmentData.startDate, "MM.dd.yyyy HH:mm") ?? "";
-    this.createModel.endDate = this.date.transform(e.appointmentData.endDate, "MM.dd.yyyy HH:mm") ?? "";
+    this.createModel.startDate = this.date.transform(e.appointmentData.startDate, "yyyy.MM.dd HH:mm") ?? "";
+    this.createModel.endDate = this.date.transform(e.appointmentData.endDate, "yyyy.MM.dd HH:mm") ?? "";
     this.createModel.doctorId = this.selectedDoctorId;
 
     $("#addModal").modal("show");
@@ -111,7 +111,7 @@ export class HomeComponent {
 
     console.log(e);
 
-    this.swal.callSwal("Delete appointment?", `You want to delete ${e.appointmentData.patient.fullName} appointment?`, () => {
+    this.swal.callSwal("Randevu silinsin mi?", `${e.appointmentData.patient.fullName} bu randevuyu silmek istediğinize emin misiniz?`, () => {
       this.http.post<string>("Appointments/DeleteById", { id: e.appointmentData.id }, res => {
         this.swal.callToast(res.data, "info");
         this.getAllAppointments();
@@ -124,8 +124,8 @@ export class HomeComponent {
 
     const data = {
       id: e.oldData.id,
-      startDate: this.date.transform(e.newData.startDate, "MM.dd.yyyy HH:mm"),
-      endDate: this.date.transform(e.newData.endDate, "MM.dd.yyyy HH:mm"),
+      startDate: this.date.transform(e.newData.startDate, "yyyy.MM.dd HH:mm"),
+      endDate: this.date.transform(e.newData.endDate, "yyyy.MM.dd HH:mm"),
     };
 
     this.http.post<string>("Appointments/Update", data, res => {
