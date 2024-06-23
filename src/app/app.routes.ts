@@ -3,8 +3,11 @@ import { LoginComponent } from './components/login/login.component';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AuthService } from './services/auth.service';
 import { inject } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { DoctorsComponent } from './components/doctors/doctors.component';
+import { PatientsComponent } from './components/patient/patient.component';
+import { UsersComponent } from './components/users/users.component';
 
 export const routes: Routes =
 [
